@@ -8,7 +8,7 @@ body{
       hsla(321, 100%, 85%, 0.808),
       hsla(321, 100%, 85%, 0.952)
     ),
-    url("/Images/SAXM2126.PNG");
+    url("../Images/SAXM2126.PNG");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
