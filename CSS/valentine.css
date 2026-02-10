@@ -139,7 +139,7 @@ p{
     color: white;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
   h1 {
     font-size: 1.50em;
     text-align: center;
@@ -175,4 +175,14 @@ p{
     justify-content: center;
     width: 100%;
   }
+
+  .music-text {
+  font-size: .7rem;
+}
+
+#musicBtn {
+  width: 32px;
+  height: 32px;
+  font-size: 15px;
+}
 }
