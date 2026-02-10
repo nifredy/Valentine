@@ -113,9 +113,7 @@ p{
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    transition: transform 0.35s cubic-bezier(.4,0,.2,1),
-              box-shadow 0.35s cubic-bezier(.4,0,.2,1),
-              background-color 0.5s ease;
+    transition:background-color 0.5s ease;
 } 
 .btnyes:hover{
     background-color: hsla(0, 69%, 15%, 0.991);
@@ -129,9 +127,9 @@ p{
     border-radius: 30px;
     flex: 0 0 auto;
     cursor: pointer;
-    transition: transform 0.35s cubic-bezier(.4,0,.2,1),
-              box-shadow 0.35s cubic-bezier(.4,0,.2,1),
-              background-color 0.5s ease;
+    transition:background-color 0.5s ease,
+               left 0.2s ease,
+               top 0.2s ease;
     position: relative;
     
 }
