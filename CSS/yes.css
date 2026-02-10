@@ -248,6 +248,48 @@ body {
     overflow-x: hidden;
 
 
+    .music-control {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 999;
+  font-family: 'Poppins', sans-serif;
+}
+
+.music-text {
+  font-size: 0.85rem;
+  color: #6c264c;
+  padding: 2px 5px;
+  background:hsla(320, 13%, 95%, 0.9); 
+  border-radius: 20px;
+  opacity: 0.9;
+}
+
+#musicBtn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: hsla(320, 13%, 95%, 0.9);
+  box-shadow: #b03a7be4 0px 0px 8px 4px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#musicBtn:hover {
+  transition: transform 0.35s cubic-bezier(.4,0,.2,1),
+              box-shadow 0.35s cubic-bezier(.4,0,.2,1),
+              background-color 0.35s ease;
+  background: rgb(219, 130, 190);
+  box-shadow: #b03a7be4 0px 0px 12px 6px;
+}
+
+
   /*
    background-color: hsl(321, 100%, 85%);
    background-color: #f0e6f6;  Soft lavender for a romantic, dreamy feel 

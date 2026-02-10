@@ -82,3 +82,63 @@ function chaseMouse(event) {
     noBtn.style.top = newY + "px";
   }
 }
+
+
+
+// const musicBtn = document.getElementById("musicBtn");
+// const bgMusic = document.getElementById("bgMusic");
+
+// // Start playing music automatically (muted by default for autoplay in browsers)
+// bgMusic.volume = 0.5;
+// bgMusic.muted = true;
+// bgMusic.play();
+
+// // Toggle mute/unmute
+// musicBtn.addEventListener("click", () => {
+//   if (bgMusic.muted) {
+//     bgMusic.muted = false;
+//     musicBtn.textContent = "🔊"; // unmuted icon
+//   } else {
+//     bgMusic.muted = true;
+//     musicBtn.textContent = "🔇"; // muted icon
+//   }
+// });
+
+
+const bgMusic = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+bgMusic.volume = 0.5;
+bgMusic.muted = true;
+
+let musicStarted = false;
+
+// Start music on first user interaction
+function startMusicOnce() {
+  if (!musicStarted) {
+    bgMusic.play().then(() => {
+      musicStarted = true;
+    }).catch(() => {});
+  }
+}
+
+// Unlock audio on ANY interaction
+document.addEventListener("click", startMusicOnce, { once: true });
+document.addEventListener("keydown", startMusicOnce, { once: true });
+document.addEventListener("touchstart", startMusicOnce, { once: true });
+
+// Toggle mute
+musicBtn.addEventListener("click", (e) => {
+  e.stopPropagation(); // don't double-trigger
+
+  if (!musicStarted) {
+    startMusicOnce();
+  }
+
+  bgMusic.muted = !bgMusic.muted;
+  musicBtn.textContent = bgMusic.muted ? "🔊" : "🔇";
+});
+
+
+
+
