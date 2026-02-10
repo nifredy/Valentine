@@ -53,6 +53,6 @@ musicBtn.addEventListener("click", (e) => {
   }
 
   bgMusic.muted = !bgMusic.muted;
-  musicBtn.textContent = bgMusic.muted ? "🔊" : "🔇";
+  musicBtn.innerHTML = bgMusic.muted ? '<i class="fas fa-volume-up"></i>' : '<i class="fas fa-volume-mute"></i>';
 });
 

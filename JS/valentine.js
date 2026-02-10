@@ -127,6 +127,14 @@ document.addEventListener("click", startMusicOnce, { once: true });
 document.addEventListener("keydown", startMusicOnce, { once: true });
 document.addEventListener("touchstart", startMusicOnce, { once: true });
 
+// Handle back/forward cache restore
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    // Page restored from cache → make sure music continues
+    startMusicOnce();
+  }
+});
+
 // Toggle mute
 musicBtn.addEventListener("click", (e) => {
   e.stopPropagation(); // don't double-trigger
@@ -136,7 +144,7 @@ musicBtn.addEventListener("click", (e) => {
   }
 
   bgMusic.muted = !bgMusic.muted;
-  musicBtn.textContent = bgMusic.muted ? "🔊" : "🔇";
+  musicBtn.innerHTML = bgMusic.muted ? '<i class="fas fa-volume-up"></i>' : '<i class="fas fa-volume-mute"></i>';
 });
 
 

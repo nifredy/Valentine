@@ -50,6 +50,7 @@ body{
   background: hsla(320, 13%, 95%, 0.9);
   box-shadow: #b03a7be4 0px 0px 8px 4px;
   font-size: 20px;
+  color: #762953e4;
   cursor: pointer;
   display: flex;
   align-items: center;
