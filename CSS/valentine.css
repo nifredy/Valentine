@@ -185,3 +185,21 @@ p{
   font-size: 15px;
 }
 }
+@media (hover: hover) and (pointer: fine) {
+  .btnyes:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 30px hsla(321, 60%, 60%, 0.35);
+    color: hsl(0, 78%, 9%);
+  }
+
+  .btnno:hover {
+    transform: scale(1.02);
+    /* color: hsl(0, 78%, 9%); */
+  }
+
+  #musicBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px hsla(321, 60%, 60%, 0.4);
+  }
+}
+
