@@ -138,10 +138,37 @@ p{
     color: white;
 }
 
+
+/* explosion effect for mobile NO button */
+
+.particle {
+  position: fixed;
+  font-size: 1.5rem;
+  pointer-events: none;
+  animation: scatter 800ms ease-out forwards;
+}
+
 @keyframes explode {
   0% { transform: scale(1); opacity: 1; }
   100% { transform: scale(2.5); opacity: 0; }
 }
+
+@keyframes vibrate {
+  0% { transform: translate(0); }
+  20% { transform: translate(-3px, 3px); }
+  40% { transform: translate(3px, -3px); }
+  60% { transform: translate(-3px, -3px); }
+  80% { transform: translate(3px, 3px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes scatter {
+  to {
+    transform: translate(var(--x), var(--y)) scale(1.8);
+    opacity: 0;
+  }
+}
+
 
 
 @media (max-width: 420px) {

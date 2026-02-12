@@ -37,24 +37,8 @@ noBtn.addEventListener("click", () => {
     noBtn.textContent = noMessages[noMessages.length - 1];
 
     if (isMobile) {
-      // 📱 MOBILE → explode effect
-
-      noBtn.style.transition = "transform 0.5s ease, opacity 0.5s ease";
-      noBtn.style.transform = "scale(2)";
-      noBtn.style.opacity = "0";
-      noBtn.style.animation = "explode 0.5s ease forwards";
-
-      setTimeout(() => {
-        const explosion = document.createElement("div");
-        explosion.textContent = "😂😂😂😂😂";
-        explosion.style.fontSize = "1.5rem";
-        explosion.style.textAlign = "center";
-
-        noBtn.parentNode.replaceChild(explosion, noBtn);
-      }, 500);
-
+      explodeWithParticles();
     } else {
-      // 💻 DESKTOP → escape mode
       escapeMode = true;
       noBtn.style.position = "absolute";
       document.addEventListener("mousemove", chaseMouse);
@@ -102,6 +86,52 @@ function chaseMouse(event) {
     noBtn.style.left = newX + "px";
     noBtn.style.top = newY + "px";
   }
+}
+
+
+// 🔥 EXPLOSION FUNCTION
+function explodeWithParticles() {
+
+  // 1️⃣ Vibrate first
+  noBtn.style.animation = "vibrate 0.3s ease";
+
+  setTimeout(() => {
+
+    const rect = noBtn.getBoundingClientRect();
+    noBtn.style.opacity = "0";
+
+    // 2️⃣ Create particles
+    for (let i = 0; i < 18; i++) {
+
+      const particle = document.createElement("span");
+      particle.textContent = "😂";
+      particle.classList.add("particle");
+
+      // Start at button center
+      particle.style.left = rect.left + rect.width / 2 + "px";
+      particle.style.top = rect.top + rect.height / 2 + "px";
+
+      // Random scatter direction
+      const randomX = (Math.random() - 0.5) * 300 + "px";
+      const randomY = (Math.random() - 0.5) * 300 + "px";
+
+      particle.style.setProperty("--x", randomX);
+      particle.style.setProperty("--y", randomY);
+
+      document.body.appendChild(particle);
+
+      // Remove after animation
+      setTimeout(() => {
+        particle.remove();
+      }, 800);
+    }
+
+    // Remove original button
+    setTimeout(() => {
+      noBtn.remove();
+    }, 300);
+
+  }, 300);
 }
 
 
