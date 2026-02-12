@@ -355,6 +355,40 @@ body {
 }
 
 
+@media (max-width: 1536px) {
+  /* styles apply to 1536px and smaller */
+
+  .reset button {
+    margin-top: 17em;
+  }
+
+
+  #envelope {
+     top: 23vh;
+}
+}
+
+@media (max-width: 1366px) {
+  .reset button {
+    margin-top: 15em;
+  }
+
+
+  #envelope {
+     top: 25vh;
+}
+
+.exam-wish {
+  font-size: 1.2em;
+    bottom: 10px;
+  }
+  
+
+}
+
+
+
+
 
 @media (max-width: 420px) {
   .reset button {
