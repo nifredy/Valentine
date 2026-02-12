@@ -73,9 +73,9 @@ function chaseMouse(event) {
   const distance = Math.sqrt(dx*dx + dy*dy);
 
   // Only move if mouse is too close
-  if (distance < 100) {
+  if (distance < 120) {
     // move away gradually
-    const moveStep = 500; // how much it moves per mousemove
+    const moveStep = 400; // how much it moves per mousemove
     let newX = noBtn.offsetLeft + (dx / distance) * moveStep;
     let newY = noBtn.offsetTop + (dy / distance) * moveStep;
 
@@ -101,7 +101,7 @@ function explodeWithParticles() {
     noBtn.style.opacity = "0";
 
     // 2️⃣ Create particles
-    for (let i = 0; i < 18; i++) {
+    for (let i = 0; i < 40; i++) {
 
       const particle = document.createElement("span");
       particle.textContent = "😂";
@@ -131,7 +131,7 @@ function explodeWithParticles() {
       noBtn.remove();
     }, 300);
 
-  }, 1200);  //🔥 THIS CONTROLS HOW LONG IT WAITS BEFORE EXPLODING
+  }, 2000);  //🔥 THIS CONTROLS HOW LONG IT WAITS BEFORE EXPLODING
 }
 
 

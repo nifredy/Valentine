@@ -333,9 +333,9 @@ body {
   transition: all 0.1s linear;
   appearance: none;
   background-color: transparent;
-  border: solid 2px #d9534f;
+  border: solid 2px hsl(0, 56%, 35%);
   border-radius: 4px;
-  color: #d9534f;
+  color: hsl(0, 56%, 35%);
   display: inline-block;
   font-size: 14px;
   text-transform: uppercase;
@@ -350,7 +350,7 @@ body {
 }
 
 .reset button:hover {
-  background-color: #d9534f;
+  background-color: hsl(0, 56%, 35%);
   color: #fff;
 }
 
