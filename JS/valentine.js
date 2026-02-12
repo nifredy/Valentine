@@ -1,5 +1,7 @@
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
+const isMobile = window.matchMedia("(pointer: coarse)").matches;
+
 
 const noMessages = [
   "Come on 😏",
@@ -33,11 +35,30 @@ noBtn.addEventListener("click", () => {
   } else {
     // Last message reached → enable escape mode
     noBtn.textContent = noMessages[noMessages.length - 1];
-    escapeMode = true;
 
-    // Make NO button escape
-    noBtn.style.position = "absolute";
-    document.addEventListener("mousemove", chaseMouse);
+    if (isMobile) {
+      // 📱 MOBILE → explode effect
+
+      noBtn.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+      noBtn.style.transform = "scale(2)";
+      noBtn.style.opacity = "0";
+      noBtn.style.animation = "explode 0.5s ease forwards";
+
+      setTimeout(() => {
+        const explosion = document.createElement("div");
+        explosion.textContent = "😂😂😂😂😂";
+        explosion.style.fontSize = "1.5rem";
+        explosion.style.textAlign = "center";
+
+        noBtn.parentNode.replaceChild(explosion, noBtn);
+      }, 500);
+
+    } else {
+      // 💻 DESKTOP → escape mode
+      escapeMode = true;
+      noBtn.style.position = "absolute";
+      document.addEventListener("mousemove", chaseMouse);
+    }
   }
 
   clickCount++;
