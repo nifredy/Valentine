@@ -93,7 +93,7 @@ function chaseMouse(event) {
 function explodeWithParticles() {
 
   // 1️⃣ Vibrate first
-  noBtn.style.animation = "vibrate 0.3s ease";
+  noBtn.style.animation = "vibrate 0.3s ease infinite";
 
   setTimeout(() => {
 
@@ -123,7 +123,7 @@ function explodeWithParticles() {
       // Remove after animation
       setTimeout(() => {
         particle.remove();
-      }, 800);
+      }, 1000);
     }
 
     // Remove original button
@@ -131,7 +131,7 @@ function explodeWithParticles() {
       noBtn.remove();
     }, 300);
 
-  }, 300);
+  }, 1200);  //🔥 THIS CONTROLS HOW LONG IT WAITS BEFORE EXPLODING
 }
 
 
